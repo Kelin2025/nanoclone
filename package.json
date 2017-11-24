@@ -1,6 +1,6 @@
 {
   "name": "nanoclone",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "290B to deep clone JavaScript objects",
   "license": "MIT",
   "main": "dist/index.js",
