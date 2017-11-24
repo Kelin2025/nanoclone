@@ -1,6 +1,6 @@
-const { JSDOM } = require('jsdom');
+const { JSDOM } = require('jsdom')
 
-const nanoclone = require('../src/index').default
+const nanoclone = require('../index')
 
 it('Null/undefined/functions/etc', () => {
   // Null
@@ -10,46 +10,46 @@ it('Null/undefined/functions/etc', () => {
   expect(nanoclone()).toBeUndefined()
 
   // Function
-  const func = () => {};
+  const func = () => {}
   expect(nanoclone(func)).toBe(func)
 
   // Etc: numbers and string
-  expect(nanoclone(5)).toBe(5)  
-  expect(nanoclone('string')).toBe('string')  
+  expect(nanoclone(5)).toBe(5)
+  expect(nanoclone('string')).toBe('string')
 })
 
 it('DOM Node', () => {
-  const src = new JSDOM(`<p>Hello world</p>`).window.document;
+  const src = new JSDOM(`<p>Hello world</p>`).window.document
 
-  const copy = nanoclone(src);
+  const copy = nanoclone(src)
 
   expect(src.body.isEqualNode(copy.body)).toBe(true)
-});
+})
 
 it('Date', () => {
-  const date = '2012-01-26T13:51:50.417Z';
+  const date = '2012-01-26T13:51:50.417Z'
 
-  expect(nanoclone(new Date(date))).toEqual(new Date(date));
-});
+  expect(nanoclone(new Date(date))).toEqual(new Date(date))
+})
 
 it('RegExp', () => {
-  const regexp = /^$/;
+  const regexp = /^$/
 
-  expect(nanoclone(regexp)).toEqual(regexp);
-});
+  expect(nanoclone(regexp)).toEqual(regexp)
+})
 
 it('Arrays', () => {
   const tests = [
     [5, 5, 8, 'string'], // Flat
-    [5, 5, 8, { a :'string' }, [7, 9]], // Attached
-  ];
+    [5, 5, 8, { a: 'string' }, [7, 9]] // Attached
+  ]
 
   tests.forEach((src) => {
     const copy = nanoclone(src)
-  
-    expect(src).toEqual(copy)  
-  });
-});
+
+    expect(src).toEqual(copy)
+  })
+})
 
 it('Object', () => {
   const src = {
