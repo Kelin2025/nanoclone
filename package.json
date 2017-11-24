@@ -4,6 +4,7 @@
   "description": "290B to deep clone JavaScript objects",
   "license": "MIT",
   "main": "dist/index.js",
+  "module": "dist/index.esm.js",
   "bugs": {
     "url": "https://github.com/kelin2025/nanoclone/issues"
   },
