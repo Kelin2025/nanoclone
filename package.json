@@ -17,6 +17,8 @@
     "name": "Anton Kosykh"
   },
   "scripts": {
+    "lint": "eslint src/*.js test/*.js",
+    "test": "jest --coverage && npm run lint",
     "build": "rollup -c rollup.config.build.js && size-limit",
     "prepare": "rollup -c rollup.config.build.js"
   },
@@ -29,6 +31,8 @@
     "eslint-plugin-node": "^5.2.1",
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-standard": "^3.0.1",
+    "jest": "^21.2.1",
+    "jsdom": "^11.4.0",
     "rollup": "^0.51.8",
     "rollup-analyzer": "^1.1.0",
     "rollup-analyzer-plugin": "^1.1.1",
