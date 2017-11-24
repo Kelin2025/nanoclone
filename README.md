@@ -25,7 +25,7 @@ let b = clone(a)
 ```
 
 ## TODO
-- [] Write tests
+- [ ] Write tests
 
 ## License
 MIT
