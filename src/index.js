@@ -3,7 +3,7 @@ const clone = src => {
   if (
     !src ||
     typeof src !== 'object' ||
-    Object.prototype.toString.call(src) === '[object Function]'
+    typeof src === 'function'
   ) {
     return src
   }
