@@ -1,5 +1,5 @@
 # nanoclone
-290B to deep clone JavaScript objects
+Only **145B** to deep clone JavaScript objects
 
 ## Installation
 ```
