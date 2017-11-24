@@ -18,8 +18,7 @@
   "scripts": {
     "lint": "eslint src/*.js test/*.js",
     "test": "jest --coverage && npm run lint",
-    "build": "rollup -c rollup.config.build.js && size-limit",
-    "prepare": "rollup -c rollup.config.build.js"
+    "size": "size-limit"
   },
   "devDependencies": {
     "eslint": "^4.11.0",
