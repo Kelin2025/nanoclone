@@ -23,8 +23,6 @@
     "prepare": "rollup -c rollup.config.build.js"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
     "eslint": "^4.11.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-plugin-import": "^2.8.0",
@@ -36,7 +34,6 @@
     "rollup": "^0.51.8",
     "rollup-analyzer": "^1.1.0",
     "rollup-analyzer-plugin": "^1.1.1",
-    "rollup-plugin-babel": "^3.0.2",
     "rollup-plugin-commonjs": "^8.2.6",
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-uglify-es": "^0.0.1",

@@ -1,4 +1,4 @@
-const clone = src => {
+module.exports = function clone (src) {
   // Null/undefined/functions/etc
   if (
     !src ||
@@ -30,15 +30,13 @@ const clone = src => {
 
   // Object
   if (src instanceof Object) {
-    const obj = Object.assign({}, src)
-    Object.keys(obj).forEach(key => {
+    var obj = {}
+    for (var key in src) {
       obj[key] = clone(obj[key])
-    })
+    }
     return obj
   }
 
   // ???
   return src
 }
-
-export default clone
