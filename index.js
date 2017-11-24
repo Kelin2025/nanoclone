@@ -32,7 +32,7 @@ module.exports = function clone (src) {
   if (src instanceof Object) {
     var obj = {}
     for (var key in src) {
-      obj[key] = clone(obj[key])
+      obj[key] = clone(src[key])
     }
     return obj
   }
