@@ -16,7 +16,8 @@
     "name": "Anton Kosykh"
   },
   "scripts": {
-    "build": "rollup -c rollup.config.build.js && yarn size"
+    "build": "rollup -c rollup.config.build.js && size-limit",
+    "prepare": "rollup -c rollup.config.build.js"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
