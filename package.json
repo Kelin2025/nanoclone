@@ -1,0 +1,33 @@
+{
+  "name": "nanoclone",
+  "version": "0.1.0",
+  "description": "290B to deep clone JavaScript objects",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "bugs": {
+    "url": "https://github.com/kelin2025/nanoclone/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kelin2025/nanoclone"
+  },
+  "author": {
+    "email": "kelin2025@yandex.ru",
+    "name": "Anton Kosykh"
+  },
+  "scripts": {
+    "build": "rollup -c rollup.config.build.js && yarn size"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "rollup": "^0.51.8",
+    "rollup-analyzer": "^1.1.0",
+    "rollup-analyzer-plugin": "^1.1.1",
+    "rollup-plugin-babel": "^3.0.2",
+    "rollup-plugin-commonjs": "^8.2.6",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-uglify-es": "^0.0.1",
+    "size-limit": "^0.13.2"
+  }
+}
