@@ -1,4 +1,4 @@
-module.exports = function clone (src) {
+export default function clone (src) {
   // Null/undefined/functions/etc
   if (
     !src ||
