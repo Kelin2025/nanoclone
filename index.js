@@ -10,7 +10,7 @@ try {
   set = Set
 } catch (_) {}
 
-module.exports = function clone(src) {
+module.exports = function clone (src) {
   // Null/undefined/functions/etc
   if (!src || typeof src !== 'object' || typeof src === 'function') {
     return src
