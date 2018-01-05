@@ -8,3 +8,4 @@ report
 coverage
 npm-debug*
 .vscode
+index.js

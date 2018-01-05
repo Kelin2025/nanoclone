@@ -4,6 +4,7 @@
   "description": "200B to deep clone JavaScript objects",
   "license": "MIT",
   "main": "index.js",
+  "module": "src/index.js",
   "keywords": [
     "clone",
     "deep",
@@ -23,9 +24,12 @@
     "name": "Anton Kosykh"
   },
   "scripts": {
+    "build": "rollup -c",
     "lint": "eslint src/*.js test/*.js",
+    "pretest": "npm run build",
     "test": "jest --coverage && npm run lint",
-    "size": "size-limit"
+    "size": "size-limit",
+    "prepublish": "npm run build"
   },
   "devDependencies": {
     "eslint": "^4.11.0",
@@ -36,6 +40,7 @@
     "eslint-plugin-standard": "^3.0.1",
     "jest": "^21.2.1",
     "jsdom": "^11.4.0",
+    "rollup": "^0.53.3",
     "size-limit": "^0.13.2"
   }
 }
