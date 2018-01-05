@@ -1,9 +1,22 @@
 # nanoclone
-Only **145B** to deep clone JavaScript objects
+Only **220B** to deep clone JavaScript objects
 
 ## Is it small enough?
-See comparison with the most popular **[clone](https://www.npmjs.com/package/clone)** npm package with **236M** downloads
-![Compare with clone package](https://user-images.githubusercontent.com/4208480/33210451-5a5d6142-d12b-11e7-91b4-e14d07568eb0.png)
+See the size of the most popular **[clone](https://www.npmjs.com/package/clone)** npm package with **250M+** downloads
+![image](https://user-images.githubusercontent.com/4208480/34631395-30df289c-f281-11e7-8442-01502af2097a.png)
+And nanoclone size:
+![image](https://user-images.githubusercontent.com/4208480/34631452-7db39ae0-f281-11e7-89ab-f42d1211e147.png)
+
+## Supported 
+- [x] Primitives
+- [x] Arrays
+- [x] Plain objects
+- [x] DOM Nodes
+- [x] Date instances
+- [x] RegExp instances
+- [x] Maps
+- [x] Sets
+- [ ] Circular structures (in progress)
 
 ## Installation
 ```
