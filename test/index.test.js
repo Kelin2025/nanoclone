@@ -16,6 +16,8 @@ it('Null/undefined/functions/etc', () => {
   // Etc: numbers and string
   expect(nanoclone(5)).toBe(5)
   expect(nanoclone('string')).toBe('string')
+  expect(nanoclone(false)).toBe(false)
+  expect(nanoclone(true)).toBe(true)
 })
 
 it('DOM Node', () => {
@@ -55,6 +57,22 @@ it('Object', () => {
   const src = {
     a: 5, b: 6
   }
+
+  const copy = nanoclone(src)
+
+  expect(src).toEqual(copy)
+})
+
+it('Map', () => {
+  const src = new Map([['foo', 'bar']])
+
+  const copy = nanoclone(src)
+
+  expect(src).toEqual(copy)
+})
+
+it('Set', () => {
+  const src = new Set(['foo', 'bar'])
 
   const copy = nanoclone(src)
 
