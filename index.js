@@ -1,10 +1,18 @@
-module.exports = function clone (src) {
+// ES6 Map
+var map
+try {
+  map = Map
+} catch (_) {}
+var set
+
+// ES6 Set
+try {
+  set = Set
+} catch (_) {}
+
+module.exports = function clone(src) {
   // Null/undefined/functions/etc
-  if (
-    !src ||
-    typeof src !== 'object' ||
-    typeof src === 'function'
-  ) {
+  if (!src || typeof src !== 'object' || typeof src === 'function') {
     return src
   }
 
@@ -29,12 +37,12 @@ module.exports = function clone (src) {
   }
 
   // ES6 Maps
-  if (src instanceof Map) {
+  if (map && src instanceof map) {
     return new Map(Array.from(src.entries()))
   }
 
   // ES6 Sets
-  if (src instanceof Set) {
+  if (set && src instanceof set) {
     return new Set(Array.from(src.values()))
   }
 

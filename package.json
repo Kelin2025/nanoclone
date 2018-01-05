@@ -1,16 +1,10 @@
 {
   "name": "nanoclone",
   "version": "0.1.3",
-  "description": "290B to deep clone JavaScript objects",
+  "description": "200B to deep clone JavaScript objects",
   "license": "MIT",
   "main": "index.js",
-  "keywords": [
-    "clone",
-    "deep",
-    "nano",
-    "nanoclone",
-    "deepclone"
-  ],
+  "keywords": ["clone", "deep", "nano", "nanoclone", "deepclone"],
   "bugs": {
     "url": "https://github.com/kelin2025/nanoclone/issues"
   },
