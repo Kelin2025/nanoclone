@@ -60,3 +60,19 @@ it('Object', () => {
 
   expect(src).toEqual(copy)
 })
+
+it('Map', () => {
+  const src = new Map([['foo', 'bar']])
+
+  const copy = nanoclone(src)
+
+  expect(src).toEqual(copy)
+})
+
+it('Set', () => {
+  const src = new Set(['foo', 'bar'])
+
+  const copy = nanoclone(src)
+
+  expect(src).toEqual(copy)
+})

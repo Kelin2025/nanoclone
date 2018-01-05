@@ -28,6 +28,16 @@ module.exports = function clone (src) {
     return src.map(clone)
   }
 
+  // ES6 Maps
+  if (src instanceof Map) {
+    return new Map(Array.from(src.entries()))
+  }
+
+  // ES6 Sets
+  if (src instanceof Set) {
+    return new Set(Array.from(src.values()))
+  }
+
   // Object
   if (src instanceof Object) {
     var obj = {}
