@@ -1,6 +1,6 @@
 # nanoclone
 [![license](https://img.shields.io/github/license/kelin2025/nanoclone.svg)](https://github.com/kelin2025/nanoclone/blob/master/LICENSE)
-[![npm](https://img.shields.io/npm/v/nanoclone.svg)](https://npmjs.com/package/nanoclone)
+[![npm](https://img.shields.io/npm/v/nanoclone.svg)](https://npmjs.com/package/nanoclone)  
 Only **220B** to deep clone JavaScript objects
 
 ## Is it small enough?
