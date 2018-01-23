@@ -18,7 +18,7 @@ And nanoclone size:
 - [x] RegExp instances
 - [x] Maps
 - [x] Sets
-- [ ] Circular structures (in progress)
+- [x] Circular structures
 
 ## Installation
 ```

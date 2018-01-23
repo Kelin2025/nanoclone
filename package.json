@@ -1,7 +1,7 @@
 {
   "name": "nanoclone",
-  "version": "0.1.5",
-  "description": "200B to deep clone JavaScript objects",
+  "version": "0.2.0",
+  "description": "300B to deep clone JavaScript objects",
   "license": "MIT",
   "main": "index.js",
   "module": "src/index.js",

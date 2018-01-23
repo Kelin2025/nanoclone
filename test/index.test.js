@@ -10,7 +10,7 @@ it('Returns equal data for Null/undefined/functions/etc', () => {
   expect(nanoclone()).toBeUndefined()
 
   // Function
-  const func = () => {}
+  const func = () => { }
   expect(nanoclone(func)).toBe(func)
 
   // Etc: numbers and string
@@ -81,7 +81,7 @@ it('Returns equal data for Set', () => {
 })
 
 test("Doesn't clone function", () => {
-  const src = function b () {}
+  const src = function b () { }
 
   const copy = nanoclone(src)
 
@@ -128,6 +128,24 @@ test('Clones Object with nested data', () => {
   copy.b.c = 'asdf'
   copy.b.d[1] = 4
   expect(src).toEqual(srcValues)
+})
+
+it('clones circular data', () => {
+  var a = { foo: 'bar' }
+  a.baz = a
+  var b = { foo: 'bar' }
+  b.baz = b
+  expect(nanoclone(a)).toEqual(b)
+})
+
+it('clones classes instances', () => {
+  var A = function (a) {
+    this.a = a
+  }
+  var a = new A(1)
+  var b = nanoclone(a)
+  expect(b).toEqual(a)
+  expect(b instanceof A).toBeTruthy()
 })
 
 it('Clones Map', () => {

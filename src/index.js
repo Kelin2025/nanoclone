@@ -2,15 +2,15 @@
 var map
 try {
   map = Map
-} catch (_) {}
+} catch (_) { }
 var set
 
 // ES6 Set
 try {
   set = Set
-} catch (_) {}
+} catch (_) { }
 
-export default function clone (src) {
+function baseClone (src, circulars, clones) {
   // Null/undefined/functions/etc
   if (!src || typeof src !== 'object' || typeof src === 'function') {
     return src
@@ -48,13 +48,22 @@ export default function clone (src) {
 
   // Object
   if (src instanceof Object) {
-    var obj = {}
+    circulars.push(src)
+    var obj = Object.create(src)
+    clones.push(obj)
     for (var key in src) {
-      obj[key] = clone(src[key])
+      var idx = circulars.findIndex(function (i) {
+        return i === src[key]
+      })
+      obj[key] = idx > -1 ? clones[idx] : baseClone(src[key], circulars, clones)
     }
     return obj
   }
 
   // ???
   return src
+}
+
+export default function clone (src) {
+  return baseClone(src, [], [])
 }
