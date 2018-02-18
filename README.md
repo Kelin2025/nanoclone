@@ -32,7 +32,7 @@ import clone from 'nanoclone'
 
 let a = {
   num: 2,
-  arr: [1, 2, 3]
+  arr: [1, 2, 3],
   nested: {
     obj: {
       a: 0
