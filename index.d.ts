@@ -1,3 +1,8 @@
+export = nanoclone;
+
 declare function nanoclone<T extends any>(src: T): T;
 
-export default nanoclone;
+declare namespace nanoclone {
+    const prototype: {
+    };
+}
