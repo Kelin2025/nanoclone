@@ -119,7 +119,17 @@ test('Clones Array with nested data', () => {
   expect(src.every(i => i !== 'mutated')).toBeTruthy()
 })
 
-test('Clones Object with nested data', () => {
+test('Clones nested Arrays', () => {
+  var src = [];
+  src.push(src, 2, src, 3);
+
+  var copy = nanoclone(src)
+  expect(copy[0]).toEqual(copy)
+  expect(src[0]).toEqual(src)
+  expect(copy[0]).not.toBe(src[0])
+})
+
+test('Clones nested Objects', () => {
   var src = { a: 1, b: { c: 1, d: [1, 2, 3] } }
   var srcValues = { a: 1, b: { c: 1, d: [1, 2, 3] } }
 
@@ -136,16 +146,6 @@ it('clones circular data', () => {
   var b = { foo: 'bar' }
   b.baz = b
   expect(nanoclone(a)).toEqual(b)
-})
-
-it('clones classes instances', () => {
-  var A = function (a) {
-    this.a = a
-  }
-  var a = new A(1)
-  var b = nanoclone(a)
-  expect(b).toEqual(a)
-  expect(b instanceof A).toBeTruthy()
 })
 
 it('Clones Map', () => {

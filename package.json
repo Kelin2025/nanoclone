@@ -41,6 +41,7 @@
     "jest": "^21.2.1",
     "jsdom": "^11.4.0",
     "rollup": "^0.53.3",
-    "size-limit": "^0.13.2"
+    "size-limit": "^0.13.2",
+    "thrustcurve-db": "^0.3.14"
   }
 }
