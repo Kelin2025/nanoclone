@@ -10,7 +10,7 @@ it('Returns equal data for Null/undefined/functions/etc', () => {
   expect(nanoclone()).toBeUndefined()
 
   // Function
-  const func = () => { }
+  const func = () => {}
   expect(nanoclone(func)).toBe(func)
 
   // Etc: numbers and string
@@ -46,7 +46,7 @@ it('Returns equal data for Arrays', () => {
     [5, 5, 8, { a: 'string' }, [7, 9]] // Attached
   ]
 
-  tests.forEach(src => {
+  tests.forEach((src) => {
     const copy = nanoclone(src)
 
     expect(src).toEqual(copy)
@@ -81,7 +81,7 @@ it('Returns equal data for Set', () => {
 })
 
 test("Doesn't clone function", () => {
-  const src = function b () { }
+  const src = function b () {}
 
   const copy = nanoclone(src)
 
@@ -114,14 +114,14 @@ test('Clones Array with nested data', () => {
   copy[2][0] = 'mutated'
   expect(src[2][0]).toBeNull()
 
-  copy = copy.map(i => 'mutated')
+  copy = copy.map((i) => 'mutated')
 
-  expect(src.every(i => i !== 'mutated')).toBeTruthy()
+  expect(src.every((i) => i !== 'mutated')).toBeTruthy()
 })
 
 test('Clones nested Arrays', () => {
-  var src = [];
-  src.push(src, 2, src, 3);
+  var src = []
+  src.push(src, 2, src, 3)
 
   var copy = nanoclone(src)
   expect(copy[0]).toEqual(copy)
@@ -166,4 +166,21 @@ it('Clones Set', () => {
   copy.add('baz')
 
   expect(src.has('baz')).toBeFalsy()
+})
+
+it('circular deps', () => {
+  const src = {
+    a: 1,
+    test: new Map()
+  }
+  src.test.set('key', src)
+
+  const copy = nanoclone(src)
+
+  copy.a = 2
+
+  console.log(src.test.values())
+
+  expect(src.a === copy.a).toBeFalsy()
+  expect(src.test.get('key') === copy.test.get('key')).toBeFalsy()
 })
