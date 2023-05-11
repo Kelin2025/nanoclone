@@ -5,6 +5,7 @@
   "license": "MIT",
   "main": "index.js",
   "module": "src/index.js",
+  "typings": "index.d.ts",
   "keywords": [
     "clone",
     "deep",
